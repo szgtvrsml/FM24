@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scout</title>
+</head>
+<body>
+
+    <form method="post" action="{% url 'scout' %}">
+        {% csrf_token %}
+        <label for="nationality">Country</label>
+        <select name="nationality" id="nationality">
+            <option value="{{ country }}">{{ country }}</option>
+            {% for x in countries %}
+            <option value="{{ x }}">{{ x }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="feature">Sorted By</label>
+        <select name="feature" id="feature">
+            {% for x in features %}
+            <option value="{{ x }}">{{ x }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    {% if filtered %}
+    <h1>{{ selected }}</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Def</th>
+            <th>Mid</th>
+            <th>Att</th>
+            <th>Condition</th>
+            <th>Injured</th>
+        </tr>
+        {% for x in players %}
+        <tr>
+            <td>{{ x.name }}</td>
+            <td>{{ x.age }}</td>
+            <td>{{ x.defense }}</td>
+            <td>{{ x.midfield }}</td>
+            <td>{{ x.attack }}</td>
+            <td>{{ x.condition }}</td>
+            <td>{{ x.injured }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files
+# nem baj ha a teszt adatbazist feltoltom
+# *.sqlite3
+
+# Log files
+*.log
+
+# Virtual environment
+venv/
+venv2/
+venv3/
+
+# Project specific
+*.env
+*.pyc
+
+# Editor-specific
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+
+# PyCharm
+.idea/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environments
+.env
+.env.local
+.env.*.local
+
+# .env files should not be included in version control.
+.envrc
+
+# pipenv
+/.venv
+
+# dotenv
+.env.*
+
+# virtualenv
+venv/
+ENV/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
